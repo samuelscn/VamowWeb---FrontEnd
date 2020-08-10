@@ -1,0 +1,148 @@
+#page-login {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+    background-image: url('../../assets/images/teste.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.98;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 3.2rem;
+    font-size: 4rem;
+    font-weight: 200;
+    letter-spacing: 0.3rem;
+}
+
+.logo-container h5 {
+    font-size: 1.6rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+}
+
+.logo-container h4 {
+    display: none;
+}
+
+.input-email {
+    font: 100 1.4rem Poppins;
+}
+
+.enter-container {
+    display: flex;
+    justify-content: center;
+}
+
+.enter-container a{
+    width: 30rem;
+    height: 6.4rem;
+    border-radius: 0.8rem;
+    font: 700 2.0rem Archivo;
+    margin-bottom: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: #ffffff;
+
+    transition: background-color 0.4s;
+}
+
+.enter-container a.signin {
+    background: var(--color-button-dark);
+}
+
+.enter-container a.signin:hover {
+    background: var(--color-button);
+}
+
+#input-container {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 0.8rem;
+    padding: 64px;
+}
+
+#input-container .input-block input{
+    margin-bottom: 1.0rem;
+    width: 100%;
+    height: 5.6rem;
+    border-radius: 0.8rem;
+    outline: 0;
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 1px solid #E6E6F0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+#input-container .input-block ::placeholder{
+    color: #ffffff;
+}
+
+.lostpass-container a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font: 700 1.8rem Archivo;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    color: var(--color-secundary);
+}
+
+.sign-container {
+    display: flex;
+    justify-content: center;
+    font: 700 1.8rem Archivo;
+}
+
+.sign-container a.signin {
+    text-decoration: none;
+    color: var(--color-secundary);
+    margin-left: 0.2rem;
+}
+
+@media (min-width: 1100px) {
+    #page-login-content {
+        max-width: 1100px;
+
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-areas: "logo formulario";
+    }
+
+    .logo-container {
+        grid-area: logo;
+    }
+
+    .logo-container {
+        font-size: 5.55rem;
+        margin-right: 7rem;
+        margin-top: 7rem;
+    }
+
+    .logo-container h5 {
+        margin-bottom: 3.2rem;
+        font-size: 1.875rem;
+        letter-spacing: 0.01em;
+    }
+
+    .logo-container h4 {
+        display: inline;
+        font-size: 4.5rem;
+    }
+
+    #input-container {
+        padding: 104px;
+    }
+}
