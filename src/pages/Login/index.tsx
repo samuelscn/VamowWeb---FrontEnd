@@ -1,8 +1,7 @@
 import React from 'react';
 
 import './styles.css';
-
-import BackgroundImg from '../../assets/images/background-img-dark.jpg';
+import { Link } from 'react-router-dom';
 
 function Login() {
     return(
@@ -26,16 +25,16 @@ function Login() {
                     </form>
                     
                     <div className="lostpass-container">
-                        <a href="" className="signin">Esqueci minha senha</a>
+                        <Link to="" className="signin">Esqueci minha senha</Link>
                     </div>
 
                     <div className="enter-container">
-                        <a href="" className="signin">ENTRAR</a>                    
+                        <Link to="/menu" className="signin">ENTRAR</Link>                    
                     </div>
 
                     <div className="sign-container">
                         <text>Não tem uma conta? </text>
-                        <a href="" className="signin">Registre-se</a>
+                        <Link to="/register" className="signin">Registre-se</Link>
                     </div>
 
                 </div>         
