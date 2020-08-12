@@ -6,6 +6,9 @@
     --color-button-text: #FFFFFF;
     --color-background: #F0F0F7;
     --color-secundary: #FFCB74;
+    --color-button-yellow-dark: #ffcc7480;
+    --color-button-fog-dark: #e6e6f054;
+    
 }
 
 * {

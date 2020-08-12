@@ -1,0 +1,178 @@
+#page-menu {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background-image: url('../../assets/images/teste.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.98;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 4.2rem;
+    font-size: 4rem;
+    font-weight: 200;
+    letter-spacing: 0.3rem;
+}
+
+.logo-container h5 {
+    font-size: 1.6rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+}
+
+.logo-container h6 {
+    margin-top: 2rem;
+}
+
+#outer-frame {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 0.8rem;
+    padding: 44px;
+}
+
+#outer-frame .browse-buttons {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+#outer-frame .browse-buttons img {
+    width: 8rem;
+    height: 9rem;
+    border-radius: 50%;
+    margin-right: 3.2rem;
+}
+
+#outer-frame .browse-buttons a {
+    width: 100%;
+    height: 5.6rem;
+    border-radius: 0.8rem;
+    outline: 0;
+    padding: 0 1.6rem;
+    display: flex;
+    align-items: center;
+    font: 500 1.8rem Archivo;
+    text-decoration: none;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 1px solid #E6E6F0;
+    box-sizing: border-box;
+    color: #ffffff;
+
+    transition: background-color 0.2s;
+}
+
+#outer-frame .browse-buttons a:hover {
+    background: var(--color-button-fog-dark);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 6.4rem;  
+    margin-top: 4rem;
+}
+
+.buttons-container a {
+    color: #ffffff;
+    font: 700 1.8rem Archivo;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    
+    transition: background-color 0.2s;
+}
+
+.buttons-container a.buscar {
+    background: linear-gradient(180deg, #FFCB74 0%, rgba(255, 203, 116, 0) 100%);    
+}
+
+.buttons-container a.criar {
+    background: linear-gradient(180deg, #C70039 0%, rgba(199, 0, 57, 0) 100%);   
+}
+
+.buttons-container a.buscar:hover {
+    background: var(--color-button-yellow-dark);    
+}
+
+.buttons-container a.criar:hover {
+    background: var(--color-button-dark);   
+}
+
+.buttons-container a img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.8rem;
+}
+
+@media (min-width: 1100px) {
+    #page-menu-content {
+        max-width: 1100px;
+
+        display: grid;
+        grid-template-rows: 350px 1fr;
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas: "logo formulario";
+    }
+
+    .logo-container {
+        grid-area: logo;
+    }
+
+    .logo-container {
+        font-size: 5.55rem;
+        margin-right: 7rem;
+        margin-top: 7rem;
+    }
+
+    .logo-container h5 {
+        margin-bottom: 3.2rem;
+        font-size: 1.875rem;
+        letter-spacing: 0.01em;
+    }
+
+    #outer-frame {
+        padding: 104px;
+    }
+
+    #outer-frame .browse-buttons img {
+        width: 11rem;
+        height: 13rem;
+        border-radius: 50%;
+        margin-right: 3.2rem;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: flex-start;
+        justify-content: center;
+        margin-left: -3.5rem;
+    }
+
+    .buttons-container a {
+        padding: 1.5rem;
+    }
+
+    .buttons-container a img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .buttons-container a.buscar {
+        height: 8rem;
+        margin-right: 2rem;
+    }
+    .buttons-container a.criar {
+        height: 8rem;
+    }
+}
