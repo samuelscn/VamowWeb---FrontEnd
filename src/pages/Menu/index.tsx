@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -29,14 +30,14 @@ function Menu() {
                     </div>
                 </div>
                 <div className="buttons-container">
-                    <a href="" className="buscar">
+                    <Link to="/menu/searchevent" className="buscar">
                         <img src={Search} alt="Lupa"/>
                         Buscar evento
-                    </a>
-                    <a href="" className="criar">
+                    </Link>
+                    <Link to="/menu/newevent" className="criar">
                         <img src={Pen} alt="Caneta"/>
                         Criar evento
-                    </a>  
+                    </Link>  
                 </div>
             </div>
         </div>
