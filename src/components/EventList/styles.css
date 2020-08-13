@@ -1,0 +1,163 @@
+.event-list {
+    background-color: #ffffff;
+    border-radius: 0.8rem;
+    border: 1px solid #ffffff;
+    margin-top: 2.4rem;
+    overflow: hidden;
+}
+
+.header-event-list {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+}
+
+.header-event-list div strong { 
+    font: 700 1.75rem Archivo;
+    margin-left: 2rem;
+    display: block;
+}
+
+.header-event-list div span{
+    margin-left: 2.0rem;
+    font: 500 1.4rem Poppins;
+    color: #6A6180;
+}
+
+.header-event-list img.hej {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 0.8rem;
+}
+
+.header-event-list img.estrela {
+    width: 5rem;
+    height: 5rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+
+.event-list p.frase {
+    font: 500 1.4rem Poppins;
+    color:#6A6180;
+    padding: 1.5rem 3rem;
+}
+
+.footer-event-list {
+    margin-top: 2rem;
+    border-top: 1px solid #E6E6F0;
+    background-color: #FAFAFC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-event-list div {
+    padding: 1.5rem 3rem;
+}
+
+.footer-event-list div p {
+    color: #9C98A6;
+}
+
+.footer-event-list div p strong{
+    color: var(--color-secundary);
+}
+
+.footer-event-list button {
+    width: 20rem;
+    height: 5.6rem;
+    border: 0;
+    border-radius: 0.8rem;
+    background-color: var(--color-button);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font: 700 1.4rem Archivo;
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: 0.2s;
+}
+
+.footer-event-list button:hover {
+    background-color: var(--color-button-dark);
+}
+
+.footer-event-list button img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+@media (min-width: 700px) {
+    .event-list header,
+    .event-list footer {
+        padding: 3.2rem;
+    }
+
+    .footer-event-list div p + p{
+        margin-top: 1rem;
+    }
+    
+    .header-event-list img.hej {
+        width: 15rem;
+        height: 15rem;
+    }    
+
+    .header-event-list img.estrela {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .header-event-list div strong { 
+        font: 700 2.5rem Archivo;
+    }
+    
+    .header-event-list div span{
+        font: 500 1.7rem Poppins;
+    }
+
+    .event-list p.frase {
+        margin-top: -2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .header-event-list div strong { 
+        font: 700 1.3rem Archivo;
+    }
+
+    .header-event-list div span { 
+        font: 500 1rem Poppins;
+    }
+
+    .header-event-list img.hej {
+        width: 7rem;
+        height: 8rem;
+    }    
+
+    .header-event-list img.estrela {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .footer-event-list div p {
+        font-size: 1.4rem;
+    }
+
+    .footer-event-list button {
+        width: 13rem;
+        height: 3.6rem;
+        font: 700 1.3rem Archivo;
+    }
+
+    .footer-event-list button img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .event-list p.frase { 
+        font-size: 1.3rem;
+    }
+    
+}
