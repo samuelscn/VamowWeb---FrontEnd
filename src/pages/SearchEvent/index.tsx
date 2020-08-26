@@ -2,6 +2,8 @@ import React from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import EventList from '../../components/EventList';
+import Input from '../../components/Inputs';
+import Select from '../../components/Select';
 
 import './styles.css';
 
@@ -10,18 +12,25 @@ function SearchEvent() {
         <div id="page-search-event">
             <PageHeader title="Eventos Disponíveis">
                 <form id="search">
-                    <div className="input-block">
-                        <label htmlFor="day">Dia</label>
-                        <input type="text" id="day"/>
-                    </div>
-                    <div className="input-block">
-                        <label htmlFor="city">Cidade</label>
-                        <input type="text" id="city"/>
-                    </div>
-                    <div className="input-block">
-                        <label htmlFor="style">Estilo</label>
-                        <input type="text" id="style"/>
-                    </div>
+                    <Input name="day" label="Dia"/>
+                    <Select 
+                        name="city" 
+                        label="Cidade"
+                        options={[
+                            { value: 'Sete Lagoas', label: 'Sete Lagoas'},
+                            { value: 'Belo Horizonte', label: 'Belo Horizonte'},
+                            { value: 'Contagem', label: 'Contagem'}
+                        ]}
+                    />
+                    <Select 
+                        name="style" 
+                        label="Estilo"
+                        options={[
+                            { value: 'Sertanejo', label: 'Sertanejo Universitario'},
+                            { value: 'Pagode', label: 'Pagode'},
+                            { value: 'Rock', label: 'Rock'}
+                        ]}
+                    />
                 </form>
             </PageHeader>
             <main>

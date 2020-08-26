@@ -8,6 +8,7 @@ import LogoIcon from '../../assets/icons/favicon.png';
 
 interface PageHeaderProps {
     title: string;
+    description?: string;
 }
 
 const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
@@ -24,6 +25,7 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
             </div>
             <div className="header-content">
                 <strong>{props.title}</strong>
+                { props.description && <p> { props.description } </p> }
             </div>
             {props.children}
         </header>

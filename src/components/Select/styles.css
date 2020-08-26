@@ -1,0 +1,19 @@
+.select-block select{
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    outline: 0;
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+
+.select-block + .select-block {
+    margin-top: 1.5rem;
+}
+
+.select-block {
+    position: relative;
+}
