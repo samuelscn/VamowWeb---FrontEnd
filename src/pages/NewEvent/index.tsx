@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Inputs';
@@ -8,6 +8,7 @@ import Select from '../../components/Select';
 import './styles.css';
 
 import WarningIcon from '../../assets/icons/aviso.svg'
+import api from '../../services/api';
 
 function NewEvent() {
     const [eventName, setEventName] = useState('');
@@ -15,15 +16,44 @@ function NewEvent() {
     const [avatar, setAvatar] = useState('');
     const [category, setCategory] = useState('');
     const [style, setStyle] = useState('');
+    const [cities, setCities] = useState([]);
+    const [locals, setLocals] = useState([]);
+    const [categorys, setCategorys] = useState([]);
+    const [styles, setStyles] = useState([]);
+    const [states, setStates] = useState([]);
+
+    /*useEffect(() => {
+        api.get('city').then((response: any) => {
+            setCities(response.data);
+        })
+    }, []);*/
+
+    useEffect(() => {
+        api.get('category').then((response: any) => {
+            setCategorys(response.data);
+        })
+    }, []);
+
+    useEffect(() => {
+        api.get('style').then((response: any) => {
+            setStyles(response.data);
+        })
+    }, []);
+
+    useEffect(() => {
+        api.get('state').then((response: any) => {
+            setStates(response.data);
+        })
+    }, []);
 
     const [scheduleItems, setScheduleItems] = useState([
-        { month: '', day: '', year: '', local: '', city: '', value: '' }
+        { month: '', day: '', year: '',  state: '', city: '', local: '', value: '' }
     ]);
 
     function addNewSchedule() {
         setScheduleItems([
             ...scheduleItems,
-            { month: '', day: '', year: '', local: '', city: '', value: '' }
+            { month: '', day: '', year: '',  state: '', city: '', local: '', value: '' }
         ]);
     }
 
@@ -52,6 +82,22 @@ function NewEvent() {
         setScheduleItems(updatedScheduleItems);
     }
 
+    function setStateValue(position: number, field: string, value: string) {
+        api.get(`city/${value}`).then((response: any) => {
+            setCities(response.data);
+        });
+
+        setScheduleItemValue(position, field, value);
+    }
+
+    function setCityValue(position: number, field: string, value: string) {
+        api.get(`local/${value}`).then((response: any) => {
+            setLocals(response.data);
+        });
+
+        setScheduleItemValue(position, field, value);
+    }
+
     return (
         <div id="page-new-event">
             <PageHeader
@@ -71,21 +117,22 @@ function NewEvent() {
                             label="Categoria"
                             value={category}
                             onChange={(e) => {setCategory(e.target.value)}}
-                            options={[
-                                { value: 'show', label: 'Show' },
-                                { value: 'bar', label: 'Bar' }
-                            ]}
+                            options={categorys.map((categoryName: any) => {
+                                return(
+                                    { value: categoryName.id, label: categoryName.nome }
+                                )
+                            })}
                         />
                         <Select
                             name="style"
                             label="Estilo"
                             value={style}
                             onChange={(e) => {setStyle(e.target.value)}}
-                            options={[
-                                { value: 'Sertanejo', label: 'Sertanejo Universitario' },
-                                { value: 'Pagode', label: 'Pagode' },
-                                { value: 'Rock', label: 'Rock' }
-                            ]}
+                            options={styles.map((styleName: any) => {
+                                return(
+                                    { value: styleName.id, label: styleName.nome }
+                                )
+                            })}
                         />
                     </fieldset>
 
@@ -126,27 +173,43 @@ function NewEvent() {
                                     </div>
 
                                     <Select
-                                        name="local"
-                                        label="Local"
-                                        value={scheduleItem.local}
-                                        onChange={e => setScheduleItemValue(index, 'local', e.target.value)}
-                                        options={[
-                                            { value: 'Esplanada', label: 'Esplanada' },
-                                            { value: 'Arena do Jacare', label: 'Arena do Jacare' },
-                                            { value: 'Morumbi', label: 'Morumbi' }
-                                        ]}
-                                    />
+                                        name="state"
+                                        label="Estado"
+                                        value={scheduleItem.state}
+                                        onChange={e => setStateValue(index, 'state', e.target.value)}
+                                        options={states.map((stateName: any) => {
+                                            return(
+                                                { value: stateName.id, label: stateName.sigla }
+                                            )
+                                        })}
+                                    />    
+
                                     <Select
                                         name="city"
                                         label="Cidade"
                                         value={scheduleItem.city}
-                                        onChange={e => setScheduleItemValue(index, 'city', e.target.value)}
-                                        options={[
-                                            { value: 'Sete Lagoas', label: 'Sete Lagoas' },
-                                            { value: 'Belo Horizonte', label: 'Belo Horizonte' },
-                                            { value: 'Sao Paulo', label: 'Sao Paulo' }
-                                        ]}
+                                        disabled={cities.length==0}
+                                        onChange={e => setCityValue(index, 'city', e.target.value)}
+                                        options={cities.map((cityName: any) => {
+                                            return (
+                                                { value: cityName.id, label: cityName.nome }
+                                            )
+                                        })}
                                     />
+
+                                    <Select
+                                        name="local"
+                                        label="Local"
+                                        value={scheduleItem.local}
+                                        disabled={locals.length==0}
+                                        onChange={e => setScheduleItemValue(index, 'local', e.target.value)}
+                                        options={locals.map((localsName: any) => {
+                                            return (
+                                                { value: localsName.id, label: localsName.nome }
+                                            )
+                                        })}
+                                    />
+
                                     <Input name="value" label="Valor" value={scheduleItem.value} onChange={e => setScheduleItemValue(index, 'value', e.target.value)}/>
                                 </div>
                             );
