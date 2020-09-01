@@ -40,7 +40,7 @@
     justify-content: center;
 }
 
-.enter-container a{
+.enter-container button{
     width: 30rem;
     height: 6.4rem;
     border-radius: 0.8rem;
@@ -53,15 +53,16 @@
 
     text-decoration: none;
     color: #ffffff;
+    cursor: pointer;
 
     transition: background-color 0.4s;
 }
 
-.enter-container a.signin {
+.enter-container button.signin {
     background: var(--color-button-dark);
 }
 
-.enter-container a.signin:hover {
+.enter-container button.signin:hover {
     background: var(--color-button);
 }
 

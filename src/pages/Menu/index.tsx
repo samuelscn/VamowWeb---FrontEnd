@@ -30,11 +30,11 @@ function Menu() {
                     </div>
                 </div>
                 <div className="buttons-container">
-                    <Link to="/menu/searchevent" className="buscar">
+                    <Link to="/searchevent" className="buscar">
                         <img src={Search} alt="Lupa"/>
                         Buscar evento
                     </Link>
-                    <Link to="/menu/newevent" className="criar">
+                    <Link to="/newevent" className="criar">
                         <img src={Pen} alt="Caneta"/>
                         Criar evento
                     </Link>  

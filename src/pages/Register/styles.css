@@ -1,0 +1,165 @@
+#page-new-user {
+    width: 100vw;
+    height: 100vh;
+}
+
+#page-new-user .page-header .header-content {
+    margin-bottom: 6.4rem;
+}
+
+#page-new-user main {
+    background-color: #FFFFFF;
+    border-radius: 0.8rem;
+    border: 1px solid #E6E6F0;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+    width: 100%;
+    max-width: 74rem;
+    overflow: hidden;
+}
+
+
+#page-new-user main fieldset {
+    border: 0;
+    padding: 0 2.4rem;
+}
+
+#page-new-user main fieldset + fieldset {
+    margin-top: 4.4rem;
+}
+
+#page-new-user main fieldset .title-events-data {
+    font: 700 2.4rem Archivo;
+    color: #32264D;  
+    width: 100%;
+    border-bottom: 1px solid #E6E6F0;
+    padding-bottom: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+#page-new-user main fieldset .title-schedule {
+    font: 700 2.4rem Archivo;
+    color: #32264D;  
+}
+
+#page-new-user main .schedule-legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E6E6F0;
+    padding-bottom: 1.6rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#page-new-user main fieldset button {
+    font: 600 1.5rem Archivo;
+    color: var(--color-secundary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#page-new-user main fieldset button:hover {
+    color: var(--color-button-yellow-dark);
+}
+
+#page-new-user main fieldset .input-block + .textarea-block {
+    margin-top: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+#page-new-user main fieldset .input-block + .select-block {
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+}
+
+#page-new-user main fieldset .select-block + .input-block {
+    margin-top: 1rem;
+}
+
+#page-new-user main label {
+    color: #9C98A6;
+    font: 400 1.2rem Poppins;
+}
+
+#page-new-user main .schedule-date {
+    margin-bottom: 1rem;
+}
+
+#page-new-user main footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2.4rem;
+    background-color: #FAFAFC;
+    border-top: 1px solid #E6E6F0;
+    margin-top: 6.4rem;
+}
+
+#page-new-user main footer p img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+}
+
+#page-new-user main footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 500 1rem Poppins;
+    color: #A0A0B3;
+}
+
+#page-new-user main footer button {
+    width: 20rem;
+    height: 5.6rem;
+    border: 0;
+    border-radius: 0.8rem;
+    background-color: var(--color-button);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 700 1.4rem Archivo;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#page-new-user main footer button:hover {
+    background-color: var(--color-button-dark);
+}
+
+
+@media (min-width: 700px) {
+    #page-new-user {
+        max-width: 100vw;
+    }
+
+    #page-new-user .page-header .header-content {
+        margin-bottom: 0;
+    }
+
+    #page-new-user main {
+        position: relative;
+    }
+
+    #page-new-user main .schedule-date {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 1.3rem;
+    }
+
+    #page-new-user main .schedule-date .input-block{
+        margin-top: 0 !important;
+    }
+
+    #page-new-user main fieldset {
+        padding: 0 6.4rem;
+    }
+
+    #page-new-user main footer {
+        padding: 4.0rem 6.4rem;
+    }
+}

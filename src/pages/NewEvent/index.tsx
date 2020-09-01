@@ -1,14 +1,16 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent, useEffect, useContext } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Inputs';
 import TextArea from '../../components/TextArea';
 import Select from '../../components/Select';
+import History from '../../history';
 
 import './styles.css';
 
 import WarningIcon from '../../assets/icons/aviso.svg'
 import api from '../../services/api';
+import AuthContext from '../../contexts/auth';
 
 function NewEvent() {
     const [eventName, setEventName] = useState('');
@@ -21,12 +23,29 @@ function NewEvent() {
     const [categorys, setCategorys] = useState([]);
     const [styles, setStyles] = useState([]);
     const [states, setStates] = useState([]);
+    const [user_id, setUser_id] = useState([]);
+
+    const { signOut } = useContext(AuthContext);
 
     /*useEffect(() => {
         api.get('city').then((response: any) => {
             setCities(response.data);
         })
     }, []);*/
+
+    async function handleSignout() {
+        signOut();
+    }
+
+    useEffect(() => {
+        const data:any = localStorage.getItem('user');
+        const userData  = JSON.parse(data);
+        const email = userData.email;
+
+        api.get(`users/${email}`).then((response: any) => {
+            setUser_id(response.data);
+        });
+    }, []);
 
     useEffect(() => {
         api.get('category').then((response: any) => {
@@ -57,17 +76,26 @@ function NewEvent() {
         ]);
     }
 
-    function formSubmit(e: FormEvent) {
+    async function formSubmit(e: FormEvent) {
         e.preventDefault();
 
-        console.log({
+        const { id } = user_id[0];
+
+        api.post('events', {
+            id,
             eventName,
             description,
             avatar,
-            category,
-            style,
+            category: Number(category),
+            style: Number(style),
             scheduleItems
-        });
+        }).then(() => {
+            alert('Cadastro realizado com sucesso!');
+
+            History.push('/');
+        }).catch(() => {
+            alert('Erro ao realizar o cadastro!');
+        })
     }
 
     function setScheduleItemValue(position: number, field: string, value: string) {
@@ -188,7 +216,7 @@ function NewEvent() {
                                         name="city"
                                         label="Cidade"
                                         value={scheduleItem.city}
-                                        disabled={cities.length==0}
+                                        disabled={cities.length===0}
                                         onChange={e => setCityValue(index, 'city', e.target.value)}
                                         options={cities.map((cityName: any) => {
                                             return (
@@ -201,7 +229,7 @@ function NewEvent() {
                                         name="local"
                                         label="Local"
                                         value={scheduleItem.local}
-                                        disabled={locals.length==0}
+                                        disabled={locals.length===0}
                                         onChange={e => setScheduleItemValue(index, 'local', e.target.value)}
                                         options={locals.map((localsName: any) => {
                                             return (
@@ -227,6 +255,7 @@ function NewEvent() {
                         <button type="submit">
                             Salvar Cadastro
                     </button>
+                    <button type="button" onClick={handleSignout}>logout</button>
                     </footer>
                 </form>
             </main>
