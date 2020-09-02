@@ -5,7 +5,7 @@ Esse projeto foi criado por Samuel Silva Costa Nascimento
 </h1>
 
 ## ✦ Telas
-<h1 style="align-itens: center">
+<h1 align="center">
     <img alt="Telas" title="App" src="src/assets/images/menu.jpg" width="350px />
     <img alt="Telas" title="App" src="src/assets/images/buscar-evento.jpg" width="350px" />
     <img alt="Telas" title="App" src="src/assets/images/login.jpg" width="350px" />  
