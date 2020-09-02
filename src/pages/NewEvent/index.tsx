@@ -41,7 +41,7 @@ function NewEvent() {
         const data:any = localStorage.getItem('user');
         const userData  = JSON.parse(data);
         const email = userData.email;
-
+        
         api.get(`users/${email}`).then((response: any) => {
             setUser_id(response.data);
         });

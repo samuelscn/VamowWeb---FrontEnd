@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../contexts/auth';
 
 const Login: React.FC = () => {
-    const { signIn, signed } = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
