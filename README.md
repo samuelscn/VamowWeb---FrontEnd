@@ -1,9 +1,12 @@
 Esse projeto foi criado por Samuel Silva Costa Nascimento
 
-## VamowWeb
+<h1>
+    <img alt="Telas" title="App" src="src/assets/images/logo.jpg" width="150px"/>
+</h1>
 
 ## ✦ Telas
 <h1 align="center">
+    <img alt="Telas" title="App" src="src/assets/images/menu.jpg" width="350px"/>
     
 </h1>
 
