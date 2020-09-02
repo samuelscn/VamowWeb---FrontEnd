@@ -6,11 +6,11 @@ Esse projeto foi criado por Samuel Silva Costa Nascimento
 
 ## ✦ Telas
 <h1 >
-    <img alt="Telas" title="App" src="src/assets/images/menu.jpg" width="350px height="200px"/>
-    <img alt="Telas" title="App" src="src/assets/images/buscar-evento.jpg" width="350px" height="200px/>
-    <img alt="Telas" title="App" src="src/assets/images/login.jpg" width="350px" height="200px/>  
-    <img alt="Telas" title="App" src="src/assets/images/cadastrar-user.jpg" width="350px" height="200px/>
-    <img alt="Telas" title="App" src="src/assets/images/criar-evento.jpg" width="350px" height="200px/>
+    <img alt="Telas" title="App" src="src/assets/images/menu.jpg" width="350px />
+    <img alt="Telas" title="App" src="src/assets/images/buscar-evento.jpg" width="350px" />
+    <img alt="Telas" title="App" src="src/assets/images/login.jpg" width="350px" />  
+    <img alt="Telas" title="App" src="src/assets/images/cadastrar-user.jpg" width="350px" />
+    <img alt="Telas" title="App" src="src/assets/images/criar-evento.jpg" width="350px" />
 </h1>
 
 ## ✦ Projeto
